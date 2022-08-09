@@ -1,0 +1,24 @@
+### 왕실의 나이트 
+---
+
+체스에서 나이트가 움직일 수 있는 경로를 모두 출력 (완전 탐색에 해당하는 듯 하다)
+
+```python
+loc = input()
+count = 0
+
+mov = [(-2, 1), (-2, -1), (-1, 2), (1, 2), (2, 1), (2, -1), (-1, -2), (1, -2)]
+for i in mov:
+	new_loc = list()
+	new_loc.append(ord(loc[0]) + i[0])
+	new_loc.append(int(loc[1]) + i[1])
+	
+	if ((new_loc[0]) > 96) & ((new_loc[0]) < 105):
+		if (new_loc[1] > 0) & (new_loc[1] < 9):
+			print(new_loc)
+			count += 1
+
+print(count)
+```
+
+for 문으로 이동경우를 계산하려 했었는데, 8가지 경우를 좌표화해서 리스트로 만드는게 좀 더 편한 듯 하다(책을 보았다)
